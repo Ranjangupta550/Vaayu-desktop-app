@@ -1,0 +1,36 @@
+{
+  "name": "vaayu-desktop-app",
+  "version": "1.0.0",
+  "main": "electron/main.cjs",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm --prefix apps/frontend run dev\" \"npx wait-on http://localhost:5173 && electron .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ranjangupta550/Vaayu-desktop-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ranjangupta550/Vaayu-desktop-app/issues"
+  },
+  "homepage": "https://github.com/Ranjangupta550/Vaayu-desktop-app#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
+    "@tailwindcss/vite": "^4.1.8",
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "wait-on": "^8.0.3"
+  }
+}

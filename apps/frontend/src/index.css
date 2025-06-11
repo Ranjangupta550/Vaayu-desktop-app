@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@theme {
+
+  --color-primary: #f8f9faff;
+  --color-secondary: #e9ecefff;
+  --color-tertiary: #dee2e6ff;
+  --color-fourth: #ced4daff;
+  --color-fifth: #adb5bdff;
+  --color-sixth: #6c757dff;
+  --color-seventh: #495057ff;
+  --color-eighth: #343a40ff;
+  --color-ninth: #212529ff;
+  --color-tenth: #000000ff;
+  --color-eleventh: #ffffff;
+  --color-background: #ffffffff;
+  --color-button: #454545;
+  --color-invert: #343a40;
+  --color-text: #333333ff;
+  --color-border-primary: #343a40;
+  --color-invert-primary: #ffffff;
+  --border-opac5: 0.5;
+  
+  
+}
+.dark {
+  --color-primary: #343a40ff;
+  --color-secondary: #4169e1;
+  --color-background: #2c3e50;
+  --color-button: #454545;
+  --color-text: #ecf0f1;
+  --color-invert: #ffffff;
+  --color-border-primary: #ced4da;
+  --color-invert-primary:#000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* === GLOBAL RESET === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+/* ===================================
+   DRAGGABLE TITLE BAR (Electron)
+=================================== */
+#draggable {
+  -webkit-app-region: drag;
+  height: 28px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  gap: 8px;
+  cursor: move;
+}
