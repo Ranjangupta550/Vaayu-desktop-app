@@ -1,7 +1,12 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
-@theme {
+/* ALL other @import rules MUST come immediately after the first @import or other @charset / @layer rules */
 
-  --color-primary: #f8f9faff;
+
+@theme {
+  --color-primary: #F1F1F1;
+  --color-toggle:#007BE4;
   --color-secondary: #e9ecefff;
   --color-tertiary: #dee2e6ff;
   --color-fourth: #ced4daff;
@@ -11,47 +16,38 @@
   --color-eighth: #343a40ff;
   --color-ninth: #212529ff;
   --color-tenth: #000000ff;
+  --color-bar: #FFFFFF;
   --color-eleventh: #ffffff;
   --color-background: #ffffffff;
   --color-button: #454545;
   --color-invert: #343a40;
   --color-text: #333333ff;
   --color-border-primary: #343a40;
-  --color-invert-primary: #ffffff;
+  --color-invert-primary: #0E0E0E;
   --border-opac5: 0.5;
-  
-  
 }
+
 .dark {
-  --color-primary: #343a40ff;
+  --color-primary: #0E0E0E;
+  --color-toggle: #0E0E0E;
   --color-secondary: #4169e1;
   --color-background: #2c3e50;
   --color-button: #454545;
   --color-text: #ecf0f1;
   --color-invert: #ffffff;
   --color-border-primary: #ced4da;
-  --color-invert-primary:#000000;
+  --color-invert-primary:#F1F1F1;
+  --color-bar: #161616;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* === GLOBAL RESET === */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+  transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif; /* Make sure this font is used! */
 }
-
 
 /* ===================================
    DRAGGABLE TITLE BAR (Electron)

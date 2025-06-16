@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useTheme } from "./libs/store";
-import { ThemeChanger, ToggleBar } from "./components";
+import { TopBar } from "@ui"; // Corrected import statement
+import { Route, RouterProvider } from "react-router-dom";
+import router from "./routers"
 
 function App() {
   const theme = useTheme((state) => state.theme);
@@ -12,15 +14,7 @@ function App() {
 
   return (
     <>
-      <ToggleBar />
-
-      <div className="flex flex-col items-center justify-center min-h-screen bg-primary">
-        <h1 className="text-4xl font-bold text-text dark:text-text-dark">
-          Vaayu Ground Control Software
-        </h1>
-
-        <ThemeChanger />
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
