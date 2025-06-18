@@ -4,11 +4,15 @@ import { persist } from "zustand/middleware";
 const useTheme = create(
   persist((set) => ({
     theme: "light",
+    isSidebarOpen: false,
     toggleTheme: () =>
       set((state) => {
         const newTheme = state.theme === "light" ? "dark" : "light";
-        console.log("Theme toggled to:", newTheme);
         return { theme: newTheme };
+      }),
+    setIsSidebarOpen: () =>
+      set((state) => {
+        return { isSidebarOpen: !state.isSidebarOpen };
       }),
   }),
   {

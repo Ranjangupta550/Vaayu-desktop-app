@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../store";
-import {Button} from "@/components"; // 
+import { useTheme } from "@store";
+import {Button} from "@ui" 
 
 export default function ThemeToggle() {
 const theme = useTheme((state) => state.theme);
@@ -9,7 +9,6 @@ const isDark = theme === "dark";
 
 function toggleThemeHandler() {
   toggleTheme();
-// console.log("Toggling theme");
   
 }
 

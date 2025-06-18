@@ -1,20 +1,32 @@
 import React from 'react'
 import{useState} from 'react'
-import {Sidebar,TopBar} from '@ui' // Corrected import statement
+import {Sidebar,TopBar,Button} from '@ui' // Corrected import statement
+import { Outlet } from 'react-router-dom';
 
+/*
+*
+ * MainLayout component provides the primary layout structure for the application.
+ * It includes a top bar, a sidebar, and a main content area.
+ *
+ * Structure:
+ * - TopBar: Displayed at the top of the layout.
+ * - Sidebar: Displayed on the left side.
+ * - Main content area: Displays the main content of the application.
+ *
+ * @component
+ * @returns {JSX.Element} The main layout structure with top bar, sidebar, and content area.
+ */
 function MainLayout() {
-
   return (
     <div className="w-screen h-screen flex flex-col">
       <div className="h-[28px]">
         <TopBar />
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden bg-bar">
         <Sidebar/>
-        <div className="flex-1 h-full overflow-y-auto border-amber-300  border bg-primary p-4">
-          <h1 className="text-2xl font-bold">Welcome to the Main Layout</h1>
-          <p>This is where your main content will be displayed.</p>
+        <div className="flex-1 h-full overflow-y-auto rounded-tl-3xl shadow-md z-10  bg-primary   flex  items-center  border border-white ">
+          { <Outlet /> }
         </div>
       </div>
     </div>
@@ -23,3 +35,4 @@ function MainLayout() {
 
 
 export default MainLayout;
+

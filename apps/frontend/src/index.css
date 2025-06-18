@@ -5,7 +5,21 @@
 
 
 @theme {
-  --color-primary: #F1F1F1;
+
+  /* === COLORS State === */
+  --color-enabled: #e5f3f0;
+  --color-disabled: #d1ede5;
+  --color-hover: #00A76F29;
+  
+
+
+
+
+
+
+
+
+  --color-primary: #dddddd;
   --color-toggle:#007BE4;
   --color-secondary: #e9ecefff;
   --color-tertiary: #dee2e6ff;
@@ -24,7 +38,10 @@
   --color-text: #333333ff;
   --color-border-primary: #343a40;
   --color-invert-primary: #0E0E0E;
+  --color-textactive: #000000;
+  --color-textinactive  : #007867;
   --border-opac5: 0.5;
+  --color-selectedbg: #e4e8eb;
 }
 
 .dark {
@@ -38,6 +55,7 @@
   --color-border-primary: #ced4da;
   --color-invert-primary:#F1F1F1;
   --color-bar: #161616;
+  --color-selectedbg:"#e4e8eb";
 }
 
 /* === GLOBAL RESET === */
@@ -47,6 +65,7 @@
   padding: 0;
   transition: all 0.3s ease;
   font-family: "Montserrat", sans-serif; /* Make sure this font is used! */
+  user-select: none;
 }
 
 /* ===================================

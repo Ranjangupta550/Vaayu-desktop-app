@@ -1,1 +1,8 @@
 node_modules
+.DS_Store
+# Logs
+logs
+*.log
+# Runtime data
+frontend/dist
+frontend/node_modules
