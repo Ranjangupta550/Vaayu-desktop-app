@@ -23,10 +23,10 @@ function MainLayout() {
         <TopBar />
       </div>
 
-      <div className="flex flex-1 overflow-hidden bg-bar">
-        <Sidebar/>
-        <div className="flex-1 h-full overflow-y-auto rounded-tl-3xl shadow-md z-10  bg-primary   flex  items-center  border border-white ">
-          { <Outlet /> }
+      <div className="relative flex flex-1 overflow-hidden bg-bar">
+        <Sidebar />
+        <div className="flex-1 h-full overflow-y-auto rounded-tl-3xl shadow-md z-10 bg-primary flex items-center   ">
+          {<Outlet />}
         </div>
       </div>
     </div>

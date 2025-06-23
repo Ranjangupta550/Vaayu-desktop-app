@@ -11,9 +11,8 @@ function Sidebar() {
   return (
     <>  
       <div
-        className={`bg-bar overflow-hidden  flex flex-col justify-evenly items-center shadow-lg transition-all duration-300 ease-in-out     ${
+        className={`relative bg-bar overflow-hidden  flex flex-col gap-y-4 top-5  items-center shadow-lg transition-all duration-300 ease-in-out     ${
           isSidebarOpen ? "w-48" : "w-14"
-
         }`}
       >
         
@@ -27,7 +26,7 @@ function Sidebar() {
                 label={item.label}
                 route={item.route}
                 icon={item.icon}
-                size={25}
+                size={20}
                 isSidebarOpen={isSidebarOpen}
               />
             </div>
