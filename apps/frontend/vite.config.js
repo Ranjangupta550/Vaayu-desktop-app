@@ -3,11 +3,15 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  //  optimizeDeps: {
+  //       include: ['react-map-gl'], // Or specific sub-dependencies if needed
+  //     },
+  
   resolve: {
     alias: {
+      // "mapbox-gl": "maplibre-gl",
       '@': path.resolve(__dirname, 'src'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@libs': path.resolve(__dirname, 'src/libs'),
@@ -15,7 +19,6 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@ui': path.resolve(__dirname, 'src/libs/ui'),
       '@store': path.resolve(__dirname, 'src/libs/store'),
-
-    },
+    }
   },
 })
