@@ -1,6 +1,6 @@
 import {createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from '@/components';
-import { PageNotFound,Dashboard } from '@/pages';
+import { PageNotFound,Dashboard,MissionPlan } from '@/pages';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -11,6 +11,11 @@ const router = createBrowserRouter([
                 // path: '/dashboard',
                 element: <Dashboard />,
             },
+            {
+                path: '/mission-plan',
+                element: <MissionPlan />
+            },
+
             {
                 path: '*',
                 element: <PageNotFound />  
