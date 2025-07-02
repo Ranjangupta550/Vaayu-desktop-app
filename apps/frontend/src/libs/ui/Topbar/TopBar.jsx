@@ -11,7 +11,7 @@ const setIsSidebarOpen = useTheme((state) => state.setIsSidebarOpen);
   return (
     <div
       id="draggable"
-      className="bg-bar h-1 relative z-50 w-screen  flex items-center justify-between  overflow-hidden"
+      className="bg-bar  relative   flex items-center justify-between  overflow-hidden"
     >
       {/* <Button className="z-50 bg-transparent cursor-pointer "
       style={{ WebkitAppRegion: "no-drag", userSelect: "none" }}
@@ -23,7 +23,7 @@ const setIsSidebarOpen = useTheme((state) => state.setIsSidebarOpen);
       }}>
         <List size={24} weight="bold" />
       </Button> */}
-      <span className=" relative text-invert-primary font-extrabold opacity-80 tracking-wide  items-center gap-x-2 flex text-sm left-1">
+      <span className=" relative text-invert-primary font-extrabold opacity-80 tracking-wide  items-center gap-x-2 flex text-sm left-4">
         <img className="h-6 " src={icons.vaayuLogo} alt="" />
         
       </span>
