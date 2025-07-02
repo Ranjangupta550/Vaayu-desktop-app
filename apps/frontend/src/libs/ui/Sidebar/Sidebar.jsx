@@ -11,9 +11,9 @@ function Sidebar() {
   return (
     <>  
       <div
-        className={`relative bg-bar overflow-hidden  flex flex-col gap-y-4 top-5  items-center shadow-lg transition-all duration-300 ease-in-out     ${
-          isSidebarOpen ? "w-48" : "w-14"
-        }`}
+        className={`relative bg-bar overflow-hidden  flex flex-col gap-y-4  items-center  transition-all 
+          top-1 
+          *:duration-300 ease-in-out   w-14 h-[calc(100vh-3rem)]   z-10`}
       >
         
         {sidebarConfig.map((item, index) => {
