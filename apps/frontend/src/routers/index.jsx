@@ -15,7 +15,6 @@ const router = createBrowserRouter([
                 path: '/mission-plan',
                 element: <MissionPlan />
             },
-
             {
                 path: '*',
                 element: <PageNotFound />  

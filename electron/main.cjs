@@ -17,6 +17,7 @@ const win = new BrowserWindow({
     webPreferences: {
         preload: path.join(__dirname, 'preload.cjs'), // optional for now
         contextIsolation: true,
+        enableRemoteModule: false, // Disable remote module for security
         nodeIntegration: false, // Disable Node.js integration for security
           additionalArguments: [`--mapbox_token=${process.env.MAPBOX_TOKEN}`], // 👈 pass to preload
 

@@ -18,14 +18,14 @@ import { Outlet } from 'react-router-dom';
  */
 function MainLayout() {
   return (
-    <div className="w-screen h-screen flex flex-col">
+    <div className="w-screen  h-screen relative flex flex-col ">
       <div className="h-[28px]">
         <TopBar />
       </div>
 
-      <div className="relative flex flex-1 overflow-hidden bg-bar">
+      <div className="relative h-[calc(100%-28px)] flex flex-1 overflow-hidden bg-bar">
         <Sidebar />
-        <div className="flex-1 h-full overflow-y-auto rounded-tl-3xl shadow-md z-10 bg-primary flex items-center   ">
+        <div className="flex-1 overflow-y-hidden rounded-tl-3xl shadow-md z-10  bg-primary flex items-center   ">
           {<Outlet />}
         </div>
       </div>
@@ -35,4 +35,3 @@ function MainLayout() {
 
 
 export default MainLayout;
-
