@@ -1,42 +1,76 @@
-import Map, { Marker, Popup, Source, Layer } from 'react-map-gl/mapbox'; // or maplibre 
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { useState, useEffect } from 'react';
+
+import Map, {
+  Marker,
+  Popup,
+  Source,
+  Layer,
+  NavigationControl,
+} from "react-map-gl/mapbox"; // or maplibre
+import "mapbox-gl/dist/mapbox-gl.css";
+import { useState, useEffect, useRef, use } from "react";
+import { useMapStore } from "@store"; // Adjust the import path as necessary
+import {MapTheme} from "@components"; // Adjust the import path as necessary
 
 function MapViewState({ geojson }) {
-  const [view, setView] = useState({ latitude:12.97, longitude:77.59, zoom:10, pitch:30 });
-  const [srcKey, setSrcKey] = useState(0);
-  const [token, setToken] = useState('');
+  const maprefrence = useRef(null);
+  const setMapRef = useMapStore((state) => state.setMapRef);
+  const mapStyle = useMapStore((state) => state.mapStyle);
 
-  useEffect(() => {
-    setSrcKey(k => k + 1);
-  }, [geojson]);
+  
+  const mapref = useMapStore((state) => state.mapRef);
+  // console.log(maprefrence.current, "maprefrence.current");
 
-  useEffect(() => {
-    async function fetchToken() {
-      try {
-        let token = await window.api.invoke("token");
-        console.log("Token fetched:", token);
-        token = toString(token);
-        // if (!token) {
-        //   setToken(token);
-        // }
-      }catch (error) {
-        console.error("Error fetching token:", error);
-      } 
-      setToken(token);
-    }
-    fetchToken();
-  }, []);
+  useEffect(()=>{
+    const handleResize = () => {
+      if (mapref.current) {
+        mapref.current.getMap().resize();
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+
+  })
+
+
+  const [view, setView] = useState({
+    latitude: 12.97,
+    longitude: 77.59,
+    zoom: 10,
+    pitch: 0,
+    bearing:0,
+  });
+
 
   return (
     <Map
+      ref={maprefrence}
       mapboxAccessToken="pk.eyJ1IjoicmFuamFuLTk4MzciLCJhIjoiY200eno4ZnBoMThzZTJpc2Nia2Zma2gyNiJ9.hszQOHoScU6INliFAnReZA" // Replace with your Mapbox token
-      viewState={view}
-      onMoveEnd={evt => setView(evt.viewState)}
-      mapStyle="mapbox://styles/mapbox/streets-v12"
-      style={{ width: '100%', height: '100%' }}
-
-    >
+      initialViewState={view}
+      antialias={true}
+      onLoad={(e) => {
+        const map = e.target;
+        // console.log("Map loaded", map);
+        setMapRef(map); // Store the map reference in the Zustand store
+      }}
+      mapStyle={mapStyle} // Use the map style from the Zustand store
+      style={{ width: "100%", height: "100%" }}
+      terrain={{
+        source: "mapbox-dem",
+        exaggeration: 1.5,
+      }}
+      minZoom={5}
+      maxZoom={20}
+      maxPitch={65}
+      showCompass={true}
+      
+      onClick={(e) => {
+        // console.log("Map clicked", e);
+      }}
+    > 
+      <NavigationControl position="top-right" />
+      <MapTheme />
     </Map>
   );
 }

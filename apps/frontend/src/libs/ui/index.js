@@ -6,3 +6,4 @@ export { default as Button } from "./Button/Button";
 export { default as Icon } from "./Icon/Icon";
 export { default as SidebarItems } from "./Sidebar/SidebarItems";
 export { default as sidebarConfig } from "./Sidebar/sidebar.config.js";
+export { default as Skeleton } from "./Loading/Skeleton";
